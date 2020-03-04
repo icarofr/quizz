@@ -32,9 +32,20 @@ $scoreCounter = 0;
                     $scoreCounter = $scoreCounter + 1;
                 }
             }
-            echo "<div class='f5'>You scored " . $scoreCounter . " out of " . count($quizz) . " points!"; ?></div>
+            echo "<div class='f5'>You scored " . $scoreCounter . " out of " . count($quizz) . " points! ";
+            if ($scoreCounter < count($quizz) / 3) {
+                echo "Try harder next time.";
+            } elseif ($scoreCounter < count($quizz) / 2) {
+                echo "Keep trying!";
+            } elseif ($scoreCounter >= count($quizz)) {
+                echo "Congratulations!";
+            } else {
+                echo "Not bad!";
+            } ?></div>
         </div>
-        <br><a href='index.php'><div class='f6 link br-pill dim ph3 pv2 mb2 dib white bg-red'>Click here to try again.</div></a>
+        <br><a href='index.php'>
+            <div class='f6 link br-pill dim ph3 pv2 mb2 dib white bg-red'>Click here to try again.</div>
+        </a>
         <script src="script.js"></script>
 </body>
 
